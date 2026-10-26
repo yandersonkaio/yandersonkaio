@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="YK.">
+  <rect width="64" height="64" rx="14" fill="#090b13"/>
+  <g fill="#f1f2fb">
+    <path transform="translate(5 50) scale(0.016 -0.024)" d="M601 0H952V540L1493 1490H1081L858 1033C827 971 803 912 778 841C753 912 727 970 695 1033L461 1490H47L601 540Z"/>
+    <path transform="translate(30 50) scale(0.016 -0.024)" d="M116 0H469V400L659 615L1048 0H1463L902 847L1442 1490H1018L686 1083C586 958 521 866 463 764L469 1124V1490H116Z"/>
+  </g>
+  <circle cx="58" cy="46.5" r="3.5" fill="#9f83fa"/>
+</svg>

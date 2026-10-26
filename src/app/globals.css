@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  --background: #090b13;
+  --foreground: #f1f2fb;
+
+  --surface: #111421;
+  --surface-2: #181b2b;
+  --surface-3: #20243a;
+
+  --border: #2c3043;
+  --muted: #a2a8bf;
+
+  --primary: #9f83fa;
+  --accent: #67d9f2;
+  --success: #87e5b1;
+
+  --header: #0b0d17e8;
+  --card-shadow: 0 24px 100px #0006;
+
+  --gradient-start: #ae96ff;
+  --gradient-middle: #86a3ff;
+  --gradient-end: #67d9f2;
+}
+
+:root.light {
+  color-scheme: light;
+
+  --background: #f5f6fb;
+  --foreground: #1c1c30;
+
+  --surface: #ffffff;
+  --surface-2: #f0f1fa;
+  --surface-3: #e8eaf7;
+
+  --border: #dfe1ed;
+  --muted: #646b83;
+
+  --primary: #6546cd;
+  --accent: #1986aa;
+  --success: #23885d;
+
+  --header: #f9f9ffed;
+  --card-shadow: 0 24px 80px #1b22551b;
+
+  --gradient-start: #6546cd;
+  --gradient-middle: #3761ce;
+  --gradient-end: #1986aa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-header: var(--header);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --shadow-card: var(--card-shadow);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  ::selection { background: var(--primary); color: #fff; }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(100deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .glass-header {
+    background: var(--header);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-glow {
+    background: radial-gradient(circle, #755deb50, #426bcc14 44%, transparent 67%);
+    filter: blur(15px);
+  }
+  .card-hover {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+  }
+}
